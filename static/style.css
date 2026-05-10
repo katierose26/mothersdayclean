@@ -1,0 +1,79 @@
+/* Set the background color to light pink and text color to dark blue for all pages */
+body {
+    background-color: #f3e2e2; /* Light pink */
+    color: #00008b; /* Dark blue */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center text on all pages */
+}
+
+
+/* Center the text on the page */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Style the link */
+a {
+    color: #a21183; /* Dark blue */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Button styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #ebcdd6; /* Hot pink */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #e8c2d9; /* Deep pink border */
+}
+
+.button:hover {
+    background-color: #f4c3d6; /* Deep pink on hover */
+    border-color: #f5d5e2; /* Hot pink border on hover */
+}
+
+/* Ensure audio elements are stacked vertically */
+audio {
+    display: block;
+    margin: 20px 0 10px 20px; /* Add some spacing between the audio players */
+    
+}
+/* Center audio elements on Page 2 */
+/* Make audio elements larger on Page 2 */
+.page2 audio {
+    display: block;
+    margin: 20px auto; /* Center horizontally with spacing */
+    width: 80%; /* Set the width to 80% of the page */
+    max-width: 600px; /* Optional: Set a maximum width */
+}
+/* Photo grid container */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 10px; /* Space between grid items */
+    padding: 20px;
+    justify-content: center; /* Center the grid horizontally */
+}
+
+/* Style for images in the grid */
+.photo-grid img {
+    width: 350px; /* Set a fixed width for smaller images */
+    height: 350px; /* Set a fixed height for smaller images */
+    object-fit: cover; /* Ensure images are cropped to fit the dimensions */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+}

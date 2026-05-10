@@ -1,0 +1,32 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Happy Mothers Day!</h1>
+    <a href="{{ url_for('page2') }}" class="button">Nightly Prayers</a>
+    <a href="{{ url_for('page3') }}" class="button">How Far Are We?</a>
+    <div class="photo-grid">
+        <img src="{{ url_for('static', filename='CU.jpeg') }}" alt="Photo 1">
+        <img src="{{ url_for('static', filename='wriggy.jpeg') }}" alt="Photo 2">
+        <img src="{{ url_for('static', filename='beach.jpeg') }}" alt="Photo 3">
+        <img src="{{ url_for('static', filename='knicks.jpeg') }}" alt="Photo 4">
+        <img src="{{ url_for('static', filename='upstate.jpeg') }}" alt="Photo 5">
+        <img src="{{ url_for('static', filename='uncle.jpeg') }}" alt="Photo 6">
+        <img src="{{ url_for('static', filename='birth.jpeg') }}" alt="Photo 7">
+        <img src="{{ url_for('static', filename='towel.jpeg') }}" alt="Photo 8">
+        <img src="{{ url_for('static', filename='liberty.jpeg') }}" alt="Photo 9">
+        <img src="{{ url_for('static', filename='bougie.jpeg') }}" alt="Photo 10">
+        <img src="{{ url_for('static', filename='skylemar.jpeg') }}" alt="Photo 11">
+        <img src="{{ url_for('static', filename='golf.jpeg') }}" alt="Photo 12">
+        <img src="{{ url_for('static', filename='hats.jpeg') }}" alt="Photo 13">
+        <img src="{{ url_for('static', filename='porch.jpeg') }}" alt="Photo 14">
+        <img src="{{ url_for('static', filename='rocker.jpeg') }}" alt="Photo 15">
+        <img src="{{ url_for('static', filename='snow.jpeg') }}" alt="Photo 16">
+        <img src="{{ url_for('static', filename='notebook.jpeg') }}" alt="Photo 17">
+        <img src="{{ url_for('static', filename='appt.jpeg') }}" alt="Photo 18">
+    </div>
+</body>
+</html>

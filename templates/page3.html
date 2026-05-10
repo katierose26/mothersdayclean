@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Distance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet.js JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 530px; /* Set the height of the map */
+            width: 100%; /* Full width */
+            margin: 20px 0;
+        }
+        .distance-output {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="{{ url_for('page1') }}" class="button">Montage</a>
+    <a href="{{ url_for('page2') }}" class="button">Nightly Prayers</a>
+    <h1>Never Too Far</h1>
+    <div>
+        <label for="location">Enter your location:</label>
+        <input type="text" id="location" placeholder="e.g. 7 East 85th St">
+        <button onclick="findDistance()">Calculate Distance</button>
+    </div>
+    <div id="map"></div>
+    <div class="distance-output" id="distance-output"></div>
+
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([40.7919994, -73.9586483], 13); // Default to New York City
+
+        // Add a tile layer (map background)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Fixed location (e.g., a specific place)
+        const fixedLocation = L.latLng(40.8095133, -73.9633969); // New York City
+        L.marker(fixedLocation).addTo(map).bindPopup("ME!").openPopup();
+
+        // Function to calculate distance
+        function findDistance() {
+    const userInput = document.getElementById('location').value;
+
+    // Use a geocoding API to convert the address to coordinates
+    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(userInput)}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                const userLocation = L.latLng(data[0].lat, data[0].lon);
+
+                // Add a marker for the user's location
+                L.marker(userLocation).addTo(map).bindPopup("Your Location").openPopup();
+
+                // Calculate the distance in kilometers
+                const distanceKm = fixedLocation.distanceTo(userLocation) / 1000;
+
+                // Convert kilometers to miles
+                const distanceMiles = distanceKm * 0.621371;
+
+                // Display the distance in miles
+                document.getElementById('distance-output').innerText = `Distance: ${distanceMiles.toFixed(2)} miles`;
+
+                // Center the map to fit both locations
+                const bounds = L.latLngBounds([fixedLocation, userLocation]);
+                map.fitBounds(bounds);
+            } else {
+                document.getElementById('distance-output').innerText = "Location not found. Please try again.";
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching location:", error);
+            document.getElementById('distance-output').innerText = "Error fetching location. Please try again.";
+        });
+}
+
+        
+    </script>
+    
+</body>
+</html>

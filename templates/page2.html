@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="page2">
+    <h1>Nightly Prayers From The Crumpets</h1>
+
+    <audio controls>
+        <source src="{{ url_for('static', filename='krstars.m4a') }}" type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+    <h4>love Rosie</h4>
+    <audio controls>
+        <source src="{{ url_for('static', filename='bhstars.m4a') }}" type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+    <h4>love Bobby Horatio</h4>
+    <a href="{{ url_for('page1') }}" class="button">Montage</a>
+    <a href="{{ url_for('page3') }}" class="button">How Far Are We?</a>
+</body>
+</html>
