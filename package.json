@@ -1,0 +1,25 @@
+{
+  "name": "mothers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katierose26/mothersdayclean.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/katierose26/mothersdayclean/issues"
+  },
+  "homepage": "https://github.com/katierose26/mothersdayclean#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
