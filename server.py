@@ -16,6 +16,9 @@ def page2():
 def page3():
     return render_template('page3.html')
 
+@app.route('/page4')
+def page4():
+    return render_template('page4.html')
 
 #if __name__ == '__main__':
  #   app.run(debug=True, host='0.0.0.0', port=5001)
